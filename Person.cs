@@ -1,6 +1,4 @@
-﻿namespace PR1;
-
-class Person
+﻿class Person
 {
     String firstName;
     String lastName;

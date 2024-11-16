@@ -1,0 +1,5 @@
+C:\Users\user\source\repos\TeamProject\obj\Debug\net8.0\TeamProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\TeamProject\obj\Debug\net8.0\TeamProject.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\TeamProject\obj\Debug\net8.0\TeamProject.AssemblyInfo.cs
+C:\Users\user\source\repos\TeamProject\obj\Debug\net8.0\TeamProject.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\TeamProject\obj\Debug\net8.0\TeamProject.sourcelink.json

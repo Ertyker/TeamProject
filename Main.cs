@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TeamProject
 {
-    internal class Main
+    class Main
     {
     }
 }

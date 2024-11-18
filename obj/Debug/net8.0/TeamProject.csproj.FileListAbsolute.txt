@@ -3,3 +3,13 @@ C:\Users\user\source\repos\TeamProject\obj\Debug\net8.0\TeamProject.AssemblyInfo
 C:\Users\user\source\repos\TeamProject\obj\Debug\net8.0\TeamProject.AssemblyInfo.cs
 C:\Users\user\source\repos\TeamProject\obj\Debug\net8.0\TeamProject.csproj.CoreCompileInputs.cache
 C:\Users\user\source\repos\TeamProject\obj\Debug\net8.0\TeamProject.sourcelink.json
+C:\Users\user\source\repos\TeamProject\bin\Debug\net8.0\TeamProject.exe
+C:\Users\user\source\repos\TeamProject\bin\Debug\net8.0\TeamProject.deps.json
+C:\Users\user\source\repos\TeamProject\bin\Debug\net8.0\TeamProject.runtimeconfig.json
+C:\Users\user\source\repos\TeamProject\bin\Debug\net8.0\TeamProject.dll
+C:\Users\user\source\repos\TeamProject\bin\Debug\net8.0\TeamProject.pdb
+C:\Users\user\source\repos\TeamProject\obj\Debug\net8.0\TeamProject.dll
+C:\Users\user\source\repos\TeamProject\obj\Debug\net8.0\refint\TeamProject.dll
+C:\Users\user\source\repos\TeamProject\obj\Debug\net8.0\TeamProject.pdb
+C:\Users\user\source\repos\TeamProject\obj\Debug\net8.0\TeamProject.genruntimeconfig.cache
+C:\Users\user\source\repos\TeamProject\obj\Debug\net8.0\ref\TeamProject.dll

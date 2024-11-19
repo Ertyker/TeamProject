@@ -12,7 +12,7 @@ namespace TeamProject
         private Education educ;
         private int groupNumber;
         private Exam[] exams = new Exam[20];
-        private int indexForAddExams = 0;
+        private int examsCount = 0;
         public Student() : this(new Person("Петя", "Петров", new DateTime(2007, 2, 2)), Education.Specialist, 4) { }
         public Student(Person studentData, Education educ, int groupNumber)
         {
@@ -35,13 +35,32 @@ namespace TeamProject
             get => exams;
             set => exams = value;
         }
+        public double AvgMark
+        {
+            get
+            {
+                int sum = 0;
+                for (int i = 0; i < Exams.Length; i++)
+                {
+                    sum += Exams[i].Mark;
+                }
+                return sum / examsCount;
+            }
+        }
+        public bool this[Education educ]
+        {
+            get
+            {
+                return Educ == educ ? true : false;
+            }
+        }
         public void AddExams(params Exam[] exams)
         {
             for (int i = 0; i < exams.Length; i++)
             {
-                if (indexForAddExams == exams.Length - 1)
+                if (examsCount == exams.Length - 1)
                 {
-                    exams[indexForAddExams++] = exams[i];
+                    exams[examsCount++] = exams[i];
                 }
                 else
                 {
@@ -50,11 +69,18 @@ namespace TeamProject
                 }
             }
         }
-    }
-    enum Education
-    {
-        Specialist,
-        Вachelor,
-        SecondEducation
+        public override string ToString()
+        {
+            string ex = "";
+            for (int i = 0; i < Exams.Length; i++)
+            {
+                ex += exams[i] + "\n";
+            }
+            return $"Данные студента: {studentData} Форма обучения: {educ} Номер группы: {groupNumber} Список экзаменов:\n{ex}";
+        }
+        public virtual string ToShortString()
+        {
+            return $"Данные студента: {studentData} Форма обучения: {educ} Номер группы: {groupNumber} Средний балл: {AvgMark}";
+        }
     }
 }

@@ -6,9 +6,9 @@
 }
 class Exam
 {
-    string LessonName { get; set; }
-    int Mark { get; set; }
-    DateTime DateExam { get; set; }
+    internal string LessonName { get; set; }
+    internal int Mark { get; set; }
+    internal DateTime DateExam { get; set; }
 
     public Exam()
     {

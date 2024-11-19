@@ -11,14 +11,15 @@ namespace TeamProject
         private Person studentData;
         private Education educ;
         private int groupNumber;
-        private Exam[] exams = new Exam[20];
+        private Exam[] exams = new Exam[10];
         private int examsCount = 0;
-        public Student() : this(new Person("Петя", "Петров", new DateTime(2007, 2, 2)), Education.Specialist, 4) { }
+        public Student() : this(new Person("Петя", "Петров", new DateTime(2007, 2, 2)), Education.Specialist, 4) { exams = new Exam[10]; }
         public Student(Person studentData, Education educ, int groupNumber)
         {
             this.studentData = studentData;
             this.educ = educ;
             this.groupNumber = groupNumber;
+            exams = new Exam[10];
         }
         public Person StudentData
         {
@@ -30,21 +31,37 @@ namespace TeamProject
             get => educ;
             set => educ = value;
         }
+        public int GroupNumber
+        {
+            get => groupNumber;
+            set => groupNumber = value;
+        }
         public Exam[] Exams
         {
             get => exams;
-            set => exams = value;
+            set
+            {
+                for (int i = 0; i < value.Length; i++)
+                {
+                    exams[i] = value[i];
+                }
+                examsCount += value.Length;
+            }
         }
         public double AvgMark
         {
             get
             {
                 int sum = 0;
-                for (int i = 0; i < Exams.Length; i++)
+                if (examsCount > 0)
                 {
-                    sum += Exams[i].Mark;
+                    for (int i = 0; i < Exams.Length; i++)
+                    {
+                        sum += Exams[i].Mark;
+                    }
+                    return (double)sum / examsCount;
                 }
-                return sum / examsCount;
+                return 0;
             }
         }
         public bool this[Education educ]
@@ -54,13 +71,13 @@ namespace TeamProject
                 return Educ == educ ? true : false;
             }
         }
-        public void AddExams(params Exam[] exams)
+        public void AddExams(params Exam[] exms)
         {
-            for (int i = 0; i < exams.Length; i++)
+            for (int i = 0; i < exms.Length; i++)
             {
-                if (examsCount == exams.Length - 1)
+                if (examsCount < Exams.Length)
                 {
-                    exams[examsCount++] = exams[i];
+                    this.exams[examsCount++] = exms[i];
                 }
                 else
                 {
@@ -74,7 +91,7 @@ namespace TeamProject
             string ex = "";
             for (int i = 0; i < Exams.Length; i++)
             {
-                ex += exams[i] + "\n";
+                if (exams[i] != null) ex += exams[i] + "\n";
             }
             return $"Данные студента: {studentData} Форма обучения: {educ} Номер группы: {groupNumber} Список экзаменов:\n{ex}";
         }

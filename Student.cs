@@ -77,7 +77,7 @@ namespace TeamProject
             {
                 if (examsCount < Exams.Length)
                 {
-                    this.exams[examsCount++] = exms[i];
+                    exams[examsCount++] = exms[i];
                 }
                 else
                 {

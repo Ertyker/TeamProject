@@ -18,5 +18,5 @@ Exam[] exams =
 };
 student.Exams = exams;
 Console.WriteLine(student);
-student.AddExams(new Exam("РСПО", 8, new DateTime(2022, 4, 5)));
+student.AddExams(new Exam("РСПО", 8, new DateTime(2022, 4, 5)), new Exam("КПЯП", 9, new DateTime(2024, 2, 2)));
 Console.WriteLine(student);

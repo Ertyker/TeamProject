@@ -69,4 +69,26 @@
     public override string ToString() => $"Имя: {firstName}; Фамилия: {LastName}; год рождения: {birthday.ToShortDateString()}";
 
     public virtual string ToShortString() => $"Имя: {firstName}; Фамилия: {LastName}";
+    public override bool Equals(object obj)
+    {
+        if (obj == null || GetType() != obj.GetType())
+            return false; Person person = (Person)obj;
+        return firstName == person.firstName && lastName == person.lastName && birthday == person.birthday;
+    }
+    public static bool operator ==(Person a, Person b)
+    {
+        return a.Equals(b);
+    }
+    public static bool operator !=(Person a, Person b)
+    {
+        return !a.Equals(b);
+    }
+    public override int GetHashCode()
+    {
+        return firstName.GetHashCode() ^ lastName.GetHashCode() ^ birthday.GetHashCode();
+    }
+    public Person DeepCopy()
+    {
+        return new Person(firstName, lastName, birthday);
+    }
 }

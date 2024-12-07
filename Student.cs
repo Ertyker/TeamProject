@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace TeamProject
 {
-    internal class Student
+    internal class Student : Person, IDateAndCopy
     {
         private Person studentData;
         private Education educ;
         private int groupNumber;
         private Exam[] exams = new Exam[10];
         private int examsCount = 0;
+
         public Student() : this(new Person("Петя", "Петров", new DateTime(2007, 2, 2)), Education.Specialist, 4) { exams = new Exam[10]; }
         public Student(Person studentData, Education educ, int groupNumber)
         {
@@ -98,6 +99,11 @@ namespace TeamProject
         public virtual string ToShortString()
         {
             return $"Данные студента: {studentData} Форма обучения: {educ} Номер группы: {groupNumber} Средний балл: {AvgMark}";
+        }
+
+        public object DeepCopy()
+        {
+            return this;
         }
     }
 }

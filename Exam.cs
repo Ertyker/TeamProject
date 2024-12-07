@@ -1,7 +1,7 @@
-﻿enum Education
+﻿public enum Education
 {
     Specialist,
-    Вachelor,
+    Bachelor,
     SecondEducation
 }
 class Exam
@@ -26,6 +26,6 @@ class Exam
 
     public override string ToString()
     {
-        return string.Format("Предмет: " + this.LessonName + " Оценка: " + this.Mark + " Дата проведения : " + this.DateExam);
+        return string.Format("Предмет: " + this.LessonName + " Оценка: " + this.Mark + " Дата проведения : " + this.DateExam.ToShortDateString());
     }
 }

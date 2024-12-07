@@ -1,8 +1,11 @@
-﻿class Person
+﻿using TeamProject;
+
+class Person : IDateAndCopy
 {
-    String firstName;
-    String lastName;
-    DateTime birthday;
+    protected String firstName;
+    protected String lastName;
+    protected DateTime birthday;
+    public DateTime Date { get; set; }
 
     public DateTime Birthday
     {
@@ -87,7 +90,7 @@
     {
         return firstName.GetHashCode() ^ lastName.GetHashCode() ^ birthday.GetHashCode();
     }
-    public Person DeepCopy()
+    public virtual object DeepCopy()
     {
         return new Person(firstName, lastName, birthday);
     }

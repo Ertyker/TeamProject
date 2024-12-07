@@ -1,14 +1,16 @@
-﻿public enum Education
+﻿using TeamProject;
+public enum Education
 {
     Specialist,
     Bachelor,
     SecondEducation
 }
-class Exam
+class Exam : IDateAndCopy
 {
     internal string LessonName { get; set; }
     internal int Mark { get; set; }
     internal DateTime DateExam { get; set; }
+    public DateTime Date { get; set; }
 
     public Exam()
     {
@@ -27,5 +29,10 @@ class Exam
     public override string ToString()
     {
         return string.Format("Предмет: " + this.LessonName + " Оценка: " + this.Mark + " Дата проведения : " + this.DateExam.ToShortDateString());
+    }
+
+    public object DeepCopy()
+    {
+        return this;
     }
 }

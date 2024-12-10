@@ -1,8 +1,6 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TeamProject
 {
@@ -11,17 +9,24 @@ namespace TeamProject
         private Person studentData;
         private Education educ;
         private int groupNumber;
-        private Exam[] exams = new Exam[10];
+        private ArrayList examsList;
         private int examsCount = 0;
+        private ArrayList testsList;
 
-        public Student() : this(new Person("Петя", "Петров", new DateTime(2007, 2, 2)), Education.Specialist, 4) { exams = new Exam[10]; }
+        public Student() : this(new Person("Петя", "Петров", new DateTime(2007, 2, 2)), Education.Specialist, 4)
+        {
+            examsList = new ArrayList();
+            testsList = new ArrayList();
+        }
         public Student(Person studentData, Education educ, int groupNumber)
         {
             this.studentData = studentData;
             this.educ = educ;
             this.groupNumber = groupNumber;
-            exams = new Exam[10];
+            examsList = new ArrayList();
+            testsList = new ArrayList();
         }
+
         public Person StudentData
         {
             get => studentData;
@@ -35,18 +40,23 @@ namespace TeamProject
         public int GroupNumber
         {
             get => groupNumber;
-            set => groupNumber = value;
-        }
-        public Exam[] Exams
-        {
-            get => exams;
             set
             {
-                for (int i = 0; i < value.Length; i++)
+                if (value <= 100 || value > 599)
                 {
-                    exams[i] = value[i];
+                    throw new ArgumentException("У вас ошибка");
                 }
-                examsCount += value.Length;
+                groupNumber = value;
+            }
+        }
+        public ArrayList Exams
+        {
+            get => examsList;
+            set
+            {
+                examsList.Clear();
+                examsList.AddRange(value);
+                examsCount = value.Count;
             }
         }
         public double AvgMark
@@ -56,9 +66,10 @@ namespace TeamProject
                 int sum = 0;
                 if (examsCount > 0)
                 {
-                    for (int i = 0; i < Exams.Length; i++)
+                    for (int i = 0; i < Exams.Count; i++)
                     {
-                        sum += Exams[i].Mark;
+                        Exam exam = (Exam)Exams[i];
+                        sum += exam.Mark;
                     }
                     return (double)sum / examsCount;
                 }
@@ -69,33 +80,27 @@ namespace TeamProject
         {
             get
             {
-                return Educ == educ ? true : false;
+                return Educ == educ;
             }
         }
         public void AddExams(params Exam[] exms)
         {
             for (int i = 0; i < exms.Length; i++)
             {
-                if (examsCount < Exams.Length)
-                {
-                    exams[examsCount++] = exms[i];
-                }
-                else
-                {
-                    Console.WriteLine("Индекс за пределами массива");
-                    break;
-                }
+                examsList.Add(exms[i]);
+                examsCount++;
             }
         }
         public override string ToString()
         {
             string ex = "";
-            for (int i = 0; i < Exams.Length; i++)
+            for (int i = 0; i < Exams.Count; i++)
             {
-                if (exams[i] != null) ex += exams[i] + "\n";
+                if (examsList[i] != null) ex += examsList[i].ToString() + "\n";
             }
             return $"Данные студента: {studentData} Форма обучения: {educ} Номер группы: {groupNumber} Список экзаменов:\n{ex}";
         }
+
         public virtual string ToShortString()
         {
             return $"Данные студента: {studentData} Форма обучения: {educ} Номер группы: {groupNumber} Средний балл: {AvgMark}";
@@ -103,7 +108,35 @@ namespace TeamProject
 
         public object DeepCopy()
         {
-            return this;
+            return new Student(this.studentData, this.educ, this.groupNumber)
+            {
+                examsList = this.examsList
+            };
+        }
+
+        public IEnumerable<object> GetAllItems()
+        {
+            foreach (var test in testsList)
+            {
+                yield return test;
+            }
+
+            foreach (var exam in examsList)
+            {
+                yield return exam;
+            }
+        }
+
+        public IEnumerable<Exam> GetExamsWithMarkAbove(int threshold)
+        {
+            foreach (Exam exam in examsList)
+            {
+                if (exam.Mark > threshold)
+                {
+                    yield return exam;
+                }
+            }
         }
     }
 }
+

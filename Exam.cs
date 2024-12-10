@@ -33,6 +33,6 @@ class Exam : IDateAndCopy
 
     public object DeepCopy()
     {
-        return this;
+        return new Exam(this.LessonName, this.Mark, this.DateExam);
     }
 }

@@ -7,12 +7,16 @@
       "RelativeMoniker": "D:0:0:{5B7A1F70-A7F5-4D6D-9AAF-770A5E857555}|TeamProject.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5B7A1F70-A7F5-4D6D-9AAF-770A5E857555}|TeamProject.csproj|c:\\users\\user\\source\\repos\\teamproject\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B7A1F70-A7F5-4D6D-9AAF-770A5E857555}|TeamProject.csproj|solutionrelative:exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5B7A1F70-A7F5-4D6D-9AAF-770A5E857555}|TeamProject.csproj|c:\\users\\user\\source\\repos\\teamproject\\idateandcopy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B7A1F70-A7F5-4D6D-9AAF-770A5E857555}|TeamProject.csproj|solutionrelative:idateandcopy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5B7A1F70-A7F5-4D6D-9AAF-770A5E857555}|TeamProject.csproj|c:\\users\\user\\source\\repos\\teamproject\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5B7A1F70-A7F5-4D6D-9AAF-770A5E857555}|TeamProject.csproj|solutionrelative:student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B7A1F70-A7F5-4D6D-9AAF-770A5E857555}|TeamProject.csproj|c:\\users\\user\\source\\repos\\teamproject\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B7A1F70-A7F5-4D6D-9AAF-770A5E857555}|TeamProject.csproj|solutionrelative:exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5B7A1F70-A7F5-4D6D-9AAF-770A5E857555}|TeamProject.csproj|c:\\users\\user\\source\\repos\\teamproject\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5B7A1F70-A7F5-4D6D-9AAF-770A5E857555}|TeamProject.csproj|c:\\users\\user\\source\\repos\\teamproject\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5B7A1F70-A7F5-4D6D-9AAF-770A5E857555}|TeamProject.csproj|solutionrelative:test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B7A1F70-A7F5-4D6D-9AAF-770A5E857555}|TeamProject.csproj|c:\\users\\user\\source\\repos\\teamproject\\idateandcopy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B7A1F70-A7F5-4D6D-9AAF-770A5E857555}|TeamProject.csproj|solutionrelative:idateandcopy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "Main.cs",
               "ToolTip": "C:\\Users\\user\\source\\repos\\TeamProject\\Main.cs",
               "RelativeToolTip": "Main.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAD4AAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB4AAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-16T09:24:55.565Z",
               "IsPinned": true,
@@ -64,7 +64,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Test.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\TeamProject\\Test.cs",
               "RelativeDocumentMoniker": "Test.cs",
@@ -76,7 +76,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "IDateAndCopy.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\TeamProject\\IDateAndCopy.cs",
               "RelativeDocumentMoniker": "IDateAndCopy.cs",
@@ -84,29 +84,31 @@
               "RelativeToolTip": "IDateAndCopy.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T08:55:17.483Z"
+              "WhenOpened": "2024-12-07T08:55:17.483Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Person.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\TeamProject\\Person.cs",
               "RelativeDocumentMoniker": "Person.cs",
               "ToolTip": "C:\\Users\\user\\source\\repos\\TeamProject\\Person.cs",
               "RelativeToolTip": "Person.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAiwGEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEkAAAAAAAAAAADwv2EAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T07:24:23.014Z"
+              "WhenOpened": "2024-11-15T07:24:23.014Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Exam.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\TeamProject\\Exam.cs",
               "RelativeDocumentMoniker": "Exam.cs",
               "ToolTip": "C:\\Users\\user\\source\\repos\\TeamProject\\Exam.cs",
               "RelativeToolTip": "Exam.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAswCMAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-16T08:51:00.756Z",
               "EditorCaption": ""
@@ -119,7 +121,7 @@
               "RelativeDocumentMoniker": "Student.cs",
               "ToolTip": "C:\\Users\\user\\source\\repos\\TeamProject\\Student.cs",
               "RelativeToolTip": "Student.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAA5wDUAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAmwDUAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-18T10:34:25.301Z",
               "EditorCaption": ""

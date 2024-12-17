@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using TeamProject;
 
 Person p1 = new Person();
-Person p2 = new Person();
+Person p2 = (Person)p1.DeepCopy();
 if (p1 == p2)
 {
     Console.WriteLine(p1.ToShortString());
@@ -15,11 +15,16 @@ if (p1 == p2)
 }
 if (p2 != p1)
 {
-    Console.WriteLine(p2.ToShortString());
+    Console.WriteLine(p2);
 }
-
 Console.WriteLine($"Ссылки на объекты равны: {object.ReferenceEquals(p1, p2)}");
-Student student = new Student();
+ArrayList testsList = new ArrayList();
+testsList.Add(new Test("КПЯП", true));
+testsList.Add(new Test("ТПО", false));
+
+Console.WriteLine(testsList[0]);
+Student student = new Student(new Person("Петя", "Петров", new DateTime(2007, 2, 2)), Education.Specialist, 4, testsList);
+Student copyStudent = (Student)student.DeepCopy();
 Console.WriteLine(student.ToShortString());
 student.Educ = Education.SecondEducation;
 Console.WriteLine(student[Education.Specialist] + " " + student[Education.Bachelor] + " " + student[Education.SecondEducation]);
@@ -32,6 +37,7 @@ Exam[] exams2 = { new Exam("КПЯ", 10, new DateTime(2025, 1, 1)) };
 student.Exams = exams;
 student.AddExams(exams2);
 Exam exam1 = new Exam();
+Exam copyExam = (Exam)exam1.DeepCopy();
 Console.WriteLine(exam1);
 Console.WriteLine(student);
 
@@ -72,7 +78,7 @@ finally
     {
         foreach (Exam exam in item.Exams)
         {
-            if(exam.Mark >3)
+            if (exam.Mark > 3)
                 Console.WriteLine(exam);
         }
     }

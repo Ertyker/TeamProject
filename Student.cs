@@ -13,18 +13,18 @@ namespace TeamProject
         private int examsCount = 0;
         private ArrayList testsList;
 
-        public Student() : this(new Person("Петя", "Петров", new DateTime(2007, 2, 2)), Education.Specialist, 4)
+        public Student() : this(new Person("Петя", "Петров", new DateTime(2007, 2, 2)), Education.Specialist, 4, new ArrayList())
         {
             examsList = new ArrayList();
             testsList = new ArrayList();
         }
-        public Student(Person studentData, Education educ, int groupNumber)
+        public Student(Person studentData, Education educ, int groupNumber, ArrayList tests)
         {
             this.studentData = studentData;
             this.educ = educ;
             this.groupNumber = groupNumber;
             examsList = new ArrayList();
-            testsList = new ArrayList();
+            testsList = tests;
         }
 
         public Person StudentData
@@ -108,7 +108,7 @@ namespace TeamProject
 
         public object DeepCopy()
         {
-            return new Student(this.studentData, this.educ, this.groupNumber)
+            return new Student(this.studentData, this.educ, this.groupNumber, testsList)
             {
                 examsList = this.examsList
             };
